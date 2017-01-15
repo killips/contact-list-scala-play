@@ -1,0 +1,16 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# An example controller showing a sample home page
+GET     /                           controllers.PhoneListController.phoneList
+# Map static resources from the /public folder to the /assets URL path
+GET     /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)
+
+GET     /phones                     controllers.PhoneListController.getPhones
+#   phone-list
+POST    /phone-list                 controllers.PhoneListController.addPhone
+
+POST    /phone-delet                controllers.PhoneListController.deletPhone
+
+POST    /search-phone               controllers.PhoneListController.searchPhone
