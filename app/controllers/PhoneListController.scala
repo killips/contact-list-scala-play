@@ -16,12 +16,6 @@ class PhoneListController @Inject()  extends Controller {
   def phoneList = Action{
     Ok(views.html.index("Hello World"))
   }
-
-//  val phoneForm: Form[Phone] = Form {
-//    mapping(){
-//      "name" -> text
-//    }(Phone.apply)(Phone.unapply)
-//  }
   val phoneForm = Form(
   mapping(
     "name" -> text,

@@ -8,6 +8,5 @@ import play.api.libs.json.Json
 case class Phone(name: String, phoneNumber: String)
 
 object Phone{
-
   implicit val phoneFormat = Json.format[Phone]
 }
