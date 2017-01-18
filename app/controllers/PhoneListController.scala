@@ -57,7 +57,7 @@ class PhoneListController @Inject() extends Controller {
   }
   def searchContact = Action{ implicit request =>
     val requestSearch = searchForm.bindFromRequest.get
-    val searchPhone = if(requestSearch.text.isEmpty){ DB.query[Contact].fetch() }else { DB.query[Contact].where(("name" regex  requestSearch.text)).fetch() }
+    val searchPhone = if(requestSearch.text.isEmpty){ DB.query[Contact].fetch() }else { DB.query[Contact].where(("name" regex requestSearch.text)).fetch() }
     Ok(Json.toJson(searchPhone))
   }
 }

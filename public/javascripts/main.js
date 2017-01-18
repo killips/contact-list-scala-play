@@ -12,12 +12,11 @@ $(document).ready(function() {
         e.preventDefault();
 
 
-        if(!(/^\\w+$/i.test($("#newName").val())) && !(/^(\s*)?(\+)?([- _():=+]?\d[- _():=+]?){10,14}(\s*)?$/.test($('#newPhone').val()))) //validator
+        if(!(/^\\w+$/i.test($("#newName").val())) && !(/^(\s*)?(\+)?([- _():=+]?\d[- _():=+]?){2,14}(\s*)?$/.test($('#newPhone').val()))) //validator
         {
-            alert("Incorrectly filled field. In the phone only input numbers, +, -, and ().");
+            alert("Incorrectly filled field. In the phone only input numbers, +, -, and (). The telephone number from 2 to 16.");
             return false;
         }
-        alert(/^\\w+$/i.test($("#newName").val()) && /^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}$/.test($('#newPhone').val()));
         var myData = {name: $('#newName').val(),phoneNumber: $('#newPhone').val()};
         $.ajax({
             type: "POST",
